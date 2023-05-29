@@ -1,0 +1,36 @@
+﻿2022-10-11
+CommandCardDMC类：
+设置插补运动速度曲线的平滑时间  SetInterpSpeed函数添加   dmc_set_vector_s_profile  0.15s平滑时间
+MoveLineAbs 函数改变内部执行顺序
+XMove类：
+插补防呆 PrimOnSignal ：213行   增加插补到位判断
+
+2022-10-12
+配置AX，BX回零防呆信号显示到界面  [但回零逻辑还没改]
+PLC 报警信号监控 修改（之前有些M变量没有监控）
+
+2022-10-14
+X轴回零逻辑修改（待加硬件验证）
+增加 SettingOption.Instacne.反向进玻璃 （流道进玻璃方向可选  PLC  M862 【滁州隆基】）
+增加枚举PLC_MWrite；
+
+2022-10-17
+4条流线 焊机请求进串 信号加防呆；
+AB串标志 改为枚举
+打印线程堆栈信息
+XStationControlcs 控件监控轴Enc 和Cmd pos
+验证手动摆串逻辑完成
+
+2022-10-18
+Task  SetStep  避免重复写入
+
+2022-10-19/20
+新增参数： SettingOption
+  <Mes_A_IP>192.168.1.35</Mes_A_IP>
+  <Mes_B_IP>192.168.15.3</Mes_B_IP>
+  <Mes_A_Iport>8088</Mes_A_Iport>
+  <Mes_B_Iport>6001</Mes_B_Iport>
+  新增MesServer帮助类，整合ModbusTCP到MesServer
+  新增定位皮带流线Log日志记录，监控定位皮带到位后不后退的问题
+  新增与串焊机TCP通信测试的功能
+2022.12.12 
